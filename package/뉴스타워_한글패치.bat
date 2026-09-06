@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title News Tower Korean Patch v1.0.0
+title News Tower Korean Patch v1.0.1
 
 attrib +h "%~dp0.patch_data" >nul 2>&1
 

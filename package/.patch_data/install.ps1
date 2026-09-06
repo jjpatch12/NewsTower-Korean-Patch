@@ -41,7 +41,7 @@ public static class NewsTowerMsDelta
 function Write-Title {
     Write-Host ""
     Write-Host "==============================================" -ForegroundColor DarkCyan
-    Write-Host " News Tower 한국어 패치 v1.0.0" -ForegroundColor Cyan
+    Write-Host " News Tower 한국어 패치 v1.0.1" -ForegroundColor Cyan
     Write-Host " 대상 게임: News Tower v1.1.165.r (Windows)" -ForegroundColor Gray
     Write-Host "==============================================" -ForegroundColor DarkCyan
     Write-Host ""
@@ -70,14 +70,6 @@ function Resolve-GameRoot([string]$RequestedPath) {
         $candidates.Add($RequestedPath.Trim().Trim('"'))
     }
     $candidates.Add($PackageRoot)
-    $candidates.Add((Join-Path ([Environment]::GetFolderPath("Desktop")) "News.Tower.v1.1.165.r"))
-    $candidates.Add((Join-Path ([Environment]::GetFolderPath("Desktop")) "News Tower"))
-    if (${env:ProgramFiles(x86)}) {
-        $candidates.Add((Join-Path ${env:ProgramFiles(x86)} "Steam\steamapps\common\News Tower"))
-    }
-    if ($env:ProgramFiles) {
-        $candidates.Add((Join-Path $env:ProgramFiles "Steam\steamapps\common\News Tower"))
-    }
 
     $seen = @{}
     foreach ($candidate in $candidates) {
@@ -97,8 +89,12 @@ function Resolve-GameRoot([string]$RequestedPath) {
         throw "지정한 폴더에서 'News Tower.exe'를 찾지 못했습니다: $RequestedPath"
     }
 
-    Write-Host "게임 폴더를 자동으로 찾지 못했습니다." -ForegroundColor Yellow
-    $typed = (Read-Host "'News Tower.exe'가 들어 있는 폴더 경로를 붙여 넣으세요").Trim().Trim('"')
+    Write-Host "BAT 옆에서 게임 실행 파일을 찾지 못했습니다." -ForegroundColor Yellow
+    $typedInput = Read-Host "'News Tower.exe'가 들어 있는 폴더 경로를 붙여 넣으세요"
+    if ($null -eq $typedInput) {
+        throw "게임 폴더가 입력되지 않았습니다."
+    }
+    $typed = $typedInput.Trim().Trim('"')
     if ([string]::IsNullOrWhiteSpace($typed)) {
         throw "게임 폴더가 입력되지 않았습니다."
     }

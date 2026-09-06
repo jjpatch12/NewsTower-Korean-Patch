@@ -139,7 +139,7 @@ for ($index = 0; $index -lt $relativeFiles.Count; $index++) {
 
 $manifest = [ordered]@{
     format = "News Tower Korean Patch / MSDelta v1"
-    patch_version = "1.0.0"
+    patch_version = "1.0.1"
     target_game = "News Tower v1.1.165.r (Windows x64)"
     created_at = [DateTimeOffset]::Now.ToString("o")
     requires_pristine_source = $true

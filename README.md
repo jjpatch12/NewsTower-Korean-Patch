@@ -5,8 +5,9 @@ News Tower `v1.1.165.r` Windows판용 직접 한글 패치입니다. BepInEx나 
 ## 설치
 
 1. 게임을 완전히 종료합니다.
-2. GitHub Releases에서 `NewsTower_Korean_Patch_v1.0.0.bat`을 내려받아 실행합니다.
-3. `1`을 눌러 설치합니다. 게임 폴더를 자동으로 찾지 못하면 `News Tower.exe`가 있는 폴더를 입력합니다.
+2. GitHub Releases에서 `NewsTower_Korean_Patch_v1.0.1.bat`을 내려받습니다.
+3. BAT를 `News Tower.exe`가 있는 순정 게임 폴더에 넣고 실행합니다.
+4. `1`을 눌러 설치합니다. BAT가 게임 폴더 밖에 있으면 정확한 게임 폴더를 직접 입력합니다.
 
 배포본은 실행 파일 하나에 패치 데이터를 내장한 BAT 형식입니다. 실행 중에만 임시 폴더로 풀고 작업이 끝나면 자동 삭제하므로 사용자가 별도 패치 파일을 관리할 필요가 없습니다.
 

@@ -9,7 +9,7 @@ from pathlib import Path
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_ROOT = REPOSITORY_ROOT / "package" / ".patch_data"
-OUTPUT = REPOSITORY_ROOT / "dist" / "NewsTower_Korean_Patch_v1.0.0.bat"
+OUTPUT = REPOSITORY_ROOT / "dist" / "NewsTower_Korean_Patch_v1.0.1.bat"
 
 
 HEADER = r'''@echo off
@@ -19,8 +19,8 @@ set "NTKR_ARG1=%~1"
 set "NTKR_ARG2=%~2"
 set "NTKR_ARG3=%~3"
 set "NTKR_ARG4=%~4"
-title News Tower Korean Patch v1.0.0
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop';$tmp=Join-Path ([IO.Path]::GetTempPath()) ('NewsTowerKR_'+[Guid]::NewGuid().ToString('N'));$forward=@($env:NTKR_ARG1,$env:NTKR_ARG2,$env:NTKR_ARG3,$env:NTKR_ARG4)|Where-Object{$_};try{[IO.Directory]::CreateDirectory($tmp)|Out-Null;$text=[IO.File]::ReadAllText($env:NTKR_SELF,[Text.Encoding]::ASCII);$marker='__NTKR_PAYLOAD__';$at=$text.LastIndexOf($marker,[StringComparison]::Ordinal);if($at -lt 0){throw 'Embedded payload not found.'};$payload=$text.Substring($at+$marker.Length);$zip=Join-Path $tmp 'payload.zip';[IO.File]::WriteAllBytes($zip,[Convert]::FromBase64String($payload));Add-Type -AssemblyName System.IO.Compression.FileSystem;[IO.Compression.ZipFile]::ExtractToDirectory($zip,$tmp);& powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File (Join-Path $tmp 'install.ps1') @forward;$code=$LASTEXITCODE}catch{Write-Host ('Bootstrap error: '+$_.Exception.Message) -ForegroundColor Red;$code=1}finally{if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Recurse -Force -ErrorAction SilentlyContinue}};exit $code"
+title News Tower Korean Patch v1.0.1
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop';$tmp=Join-Path ([IO.Path]::GetTempPath()) ('NewsTowerKR_'+[Guid]::NewGuid().ToString('N'));$forward=@($env:NTKR_ARG1,$env:NTKR_ARG2,$env:NTKR_ARG3,$env:NTKR_ARG4)|Where-Object{$_};$selfDir=Split-Path -Parent $env:NTKR_SELF;if((-not ($forward -contains '-GamePath')) -and (Test-Path -LiteralPath (Join-Path $selfDir 'News Tower.exe') -PathType Leaf)){$forward+=@('-GamePath',$selfDir)};try{[IO.Directory]::CreateDirectory($tmp)|Out-Null;$text=[IO.File]::ReadAllText($env:NTKR_SELF,[Text.Encoding]::ASCII);$marker='__NTKR_PAYLOAD__';$at=$text.LastIndexOf($marker,[StringComparison]::Ordinal);if($at -lt 0){throw 'Embedded payload not found.'};$payload=$text.Substring($at+$marker.Length);$zip=Join-Path $tmp 'payload.zip';[IO.File]::WriteAllBytes($zip,[Convert]::FromBase64String($payload));Add-Type -AssemblyName System.IO.Compression.FileSystem;[IO.Compression.ZipFile]::ExtractToDirectory($zip,$tmp);& powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File (Join-Path $tmp 'install.ps1') @forward;$code=$LASTEXITCODE}catch{Write-Host ('Bootstrap error: '+$_.Exception.Message) -ForegroundColor Red;$code=1}finally{if(Test-Path -LiteralPath $tmp){Remove-Item -LiteralPath $tmp -Recurse -Force -ErrorAction SilentlyContinue}};exit $code"
 set "PATCH_EXIT=%ERRORLEVEL%"
 echo.
 if not "%PATCH_EXIT%"=="0" echo The patch did not complete. Check the error above.

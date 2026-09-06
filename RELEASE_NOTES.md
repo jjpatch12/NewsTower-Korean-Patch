@@ -1,11 +1,14 @@
-# v1.0.0
+# v1.0.1
 
 - 대상: News Tower v1.1.165.r Windows x64
 - 단일 자동 설치/복원 BAT
 - 원본 SHA-256 검사, 자동 백업, 결과 검증, 실패 시 롤백
+- BAT의 실제 위치가 아닌 임시 압축 해제 폴더를 기준으로 게임 경로를 찾던 v1.0.0 문제 수정
+- BAT 옆에 있는 `News Tower.exe`를 대상으로 사용하며, 다른 위치에서 실행하면 게임 폴더를 직접 입력하도록 변경
+- 바탕 화면이나 Steam 폴더의 다른 설치본을 임의로 선택하던 자동 탐지 제거
 - 이미지 리소스 제외
 - BepInEx 미사용
 
-배포 파일: `NewsTower_Korean_Patch_v1.0.0.bat`
+배포 파일: `NewsTower_Korean_Patch_v1.0.1.bat`
 
-SHA-256: `3da90ddf1eecf98f97dbe267b932bd771eb87fa8f9292e047dc215b2b6671446`
+SHA-256: `3f9be22706445f1805fdfee10ee7974913d8803841b7818078fae558d0e98b64`
