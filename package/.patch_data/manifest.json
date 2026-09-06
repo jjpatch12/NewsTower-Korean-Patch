@@ -1,0 +1,72 @@
+{
+    "format":  "News Tower Korean Patch / MSDelta v1",
+    "patch_version":  "1.0.0",
+    "target_game":  "News Tower v1.1.165.r (Windows x64)",
+    "created_at":  "2026-09-07T06:49:00.9689455+09:00",
+    "requires_pristine_source":  true,
+    "bep_in_ex_used":  false,
+    "image_assets_included":  false,
+    "changed_file_count":  6,
+    "files":  [
+                  {
+                      "relative_path":  "News Tower_Data/Managed/NewsTower.dll",
+                      "delta_file":  "deltas/01-NewsTower.dll.msdelta",
+                      "original_size":  5988352,
+                      "original_sha256":  "c749a471ca1d0f340e5c9438d31048708b628697cbb570ee37e81d675447e328",
+                      "patched_size":  5942784,
+                      "patched_sha256":  "5445325dbdeb072d5c36416101650f7a797c3db062cbcba59f6c35aa2d7713d8",
+                      "delta_size":  1490019,
+                      "delta_sha256":  "9758b3795c7cf38b0534e5afbff430c6933be04e40c6e540a635d2ddff8f54a9"
+                  },
+                  {
+                      "relative_path":  "News Tower_Data/StreamingAssets/aa/catalog.json",
+                      "delta_file":  "deltas/02-catalog.json.msdelta",
+                      "original_size":  8737947,
+                      "original_sha256":  "5df6d63a176a2c2d192da6fcaafd1ae4f1fcbbdf4ecc8fb3d5ef5b13cec201d9",
+                      "patched_size":  8737947,
+                      "patched_sha256":  "8b4a29deebaa5757830c143d57911dfbb105fa1056c4da93ed800a0530c2d1ff",
+                      "delta_size":  61,
+                      "delta_sha256":  "e7153fd2cdda4263c17acfbe01eda31a74648f86bbec0086e0d749de3114d795"
+                  },
+                  {
+                      "relative_path":  "News Tower_Data/StreamingAssets/aa/StandaloneWindows64/employees_assets_all_7358c2e7a2d3a41713a98574bf4ae475.bundle",
+                      "delta_file":  "deltas/03-employees_assets_all_7358c2e7a2d3a41713a98574bf4ae475.bundle.msdelta",
+                      "original_size":  22200720,
+                      "original_sha256":  "f5e0f772d59182b2aedd23222b8ba156de7e5438aa5001e6162f7bc66b7bd08a",
+                      "patched_size":  22201808,
+                      "patched_sha256":  "361377368e4396271f66d806e88c4184e2b40e55c5f520551a6fae546b462319",
+                      "delta_size":  4641,
+                      "delta_sha256":  "4f39886d6453c16a59105cf378e8d023d11c25359fd82109252b44b90ffccea3"
+                  },
+                  {
+                      "relative_path":  "News Tower_Data/StreamingAssets/aa/StandaloneWindows64/fonts_assets_all_f0fb231c54bba8ba2b9e2497806f8eb5.bundle",
+                      "delta_file":  "deltas/04-fonts_assets_all_f0fb231c54bba8ba2b9e2497806f8eb5.bundle.msdelta",
+                      "original_size":  73258064,
+                      "original_sha256":  "af12a1bab65f8ef160a20946e2e39ec44f8083eb0631cc8b91023e38e0ead77b",
+                      "patched_size":  92506160,
+                      "patched_sha256":  "fa2d80c9a2726460b9c7dbae4d7cf0d0f230c66c1069e30601febc3ddf9ba2cd",
+                      "delta_size":  4040803,
+                      "delta_sha256":  "edb1505c6876cd5508fcb4e11388cc5a787840044640f004d9ce994bb7e23ccc"
+                  },
+                  {
+                      "relative_path":  "News Tower_Data/StreamingAssets/aa/StandaloneWindows64/localization-locales_assets_all.bundle",
+                      "delta_file":  "deltas/05-localization-locales_assets_all.bundle.msdelta",
+                      "original_size":  4856,
+                      "original_sha256":  "87fb39f8600caa1017c891f3e6051c6ba619aa8199fd479982a214be847764c4",
+                      "patched_size":  4895,
+                      "patched_sha256":  "3f5eb51e3246434e80eff1ea5fce6c40c10d17316d084a55094ca7ac8a462384",
+                      "delta_size":  1129,
+                      "delta_sha256":  "c29fd75eab2261ac49f7bff8dd7f26dea10b078a6851286095d8c5ae182b2a80"
+                  },
+                  {
+                      "relative_path":  "News Tower_Data/StreamingAssets/aa/StandaloneWindows64/localization-string-tables-english(en)_assets_all.bundle",
+                      "delta_file":  "deltas/06-localization-string-tables-english(en)_assets_all.bundle.msdelta",
+                      "original_size":  964534,
+                      "original_sha256":  "70b14308e4a3c47a08ee65adf7c4918850a185200c111f88f648902527a02398",
+                      "patched_size":  1019332,
+                      "patched_sha256":  "bdc7b8dbc52fa59f511e7db5e91decb5813240598111f1792583ee94092bdef9",
+                      "delta_size":  884130,
+                      "delta_sha256":  "21fd7fb6fb6e4f67e47dc00e46a886439aaed263524861502070cbbd2c93bd42"
+                  }
+              ]
+}
