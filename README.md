@@ -1,7 +1,6 @@
 # News Tower 한국어 패치
 <img width="616" height="353" alt="image" src="https://github.com/user-attachments/assets/4bf3ee4c-b7e8-4228-b8e8-2c506e7cc718" />
 
-News Tower `v1.1.165.r` Windows판용 직접 한글 패치입니다. BepInEx나 별도 모드 로더를 사용하지 않습니다.
 
 ## 설치
 
